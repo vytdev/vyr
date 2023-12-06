@@ -1,0 +1,31 @@
+VYT Archive Specification
+Version: 1
+Revised: December 5, 2023
+Copyright (c) 2023 VYT <https://vytdev.github.io>
+
+
+The format used is as follows:
+
+    [header] [format version] [file count] [... files]
+    4 B      1 B              4 B          any length
+
+Header: 56 56 54 52
+
+For each file:
+
+    [name length] [file name] [file size] [content]
+    2 B           variable    4 B         variable
+
+Excess data is ignored (metadata storage is permissible).
+
+Data is stored in little endian, means:
+
+    0x12345678
+
+... will be stored as:
+
+    01: 0x78
+    02: 0x56
+    03: 0x34
+    04: 0x12
+
