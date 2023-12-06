@@ -9,7 +9,7 @@ The format used is as follows:
     [header] [format version] [file count] [... files]
     4 B      1 B              4 B          any length
 
-Header: 56 56 54 52
+Header: 56 59 54 52
 
 For each file:
 
